@@ -28,15 +28,15 @@ const AllMovies = () => {
 
     }, [currentPage])
     return (
-        <div>
+        <div className={styles.container}>
             {
                 movies.map(movie => (
-                    <div>
-                        <Link>
-                            <p>{movie.title}</p>
-                        </Link>
+                    <div className={styles.wraper}>
 
-                        {/*<img src={`${APIimg}${movie.backdrop_path}`} key={movie.title} alt={movie.title}/>*/}
+                        <Link>
+                        <img  className={styles.picture} src={`${APIimg}${movie.poster_path}`} key={movie.title} alt={movie.title}/>
+
+                        </Link>
                     </div>
                 ))}
             <div>

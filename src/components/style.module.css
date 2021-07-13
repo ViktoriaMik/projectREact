@@ -1,4 +1,7 @@
-.leftBar {
+.wraper{
+    border: 1px solid grey;
+    margin-bottom: 10px;
+
 
 }
 
@@ -9,34 +12,68 @@
 .mainContent {
     display: flex;
     list-style: none;
+    box-sizing: border-box;
+    /*align-items: center;*/
+
 }
 
 .pages {
-    margin-left: 20px;
+    margin-left: 5px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 
+
+}
+
+.leftBar {
+    display: block;
+}
+
+.right {
+    display: flex;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+.title{
+    display: block;
+    justify-content: center;
+    width: 150px;
+}
+.container {
+    height: 200px;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
 }
 
 .page {
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     font-size: 20px;
     font-weight: lighter;
     cursor: pointer;
 }
-.button{
+
+.button {
     margin: 10px;
     border: 1px solid grey;
-    border-radius:15px;
+    border-radius: 15px;
     list-style: none;
 
 }
-.button:hover{
+
+.button:hover {
     margin: 10px;
     border: 3px solid grey;
 
 }
-.menuWraper{
+
+.menuWraper {
     list-style: none;
 }

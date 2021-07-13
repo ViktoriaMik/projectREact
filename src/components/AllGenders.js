@@ -44,7 +44,7 @@ const AllGenres = () => {
 
     return (
         (<div className={styles.mainContent}>
-            <div >{genres.map(genre => (
+            <div className={styles.leftBar}>{genres.map(genre => (
                 <Link to={`/movies/${genre.name}`}>
                     <span onClick={() => {
                         setId(genre.id)
@@ -62,19 +62,22 @@ const AllGenres = () => {
                 {/*    ))}*/}
                 {/*</div>*/}
             </div>
-            <Switch>
-                <Route path="/movies" exact>
-                    <AllMovies/>
-                </Route>
-                <Route path="/movies/:genre" exact>
-                    <MovieByGenre/>
-                </Route>
-                <Route path="/movies/:genre/:details" exact>
-                    <MovieInfo/>
-                </Route>
-            </Switch>
+            <div className={styles.right}>
+
+                <Switch>
+                    <Route path="/movies" exact>
+                        <AllMovies/>
+                    </Route>
+                    <Route path="/movies/:genre" exact>
+                        <MovieByGenre/>
+                    </Route>
+                    <Route path="/movies/:genre/:details" exact>
+                        <MovieInfo/>
+                    </Route>
+                </Switch>
 
 
+            </div>
         </div>)
     );
 }
