@@ -6,6 +6,7 @@ import {store} from "../store/store";
 import {Link} from "react-router-dom";
 import styles from './style.module.css'
 import {setCurrentPage} from "../redux/action-creator/movies-action-creator";
+import {ON_MOVIES_LOADED} from "../redux/action-type/movies-action-type";
 
 const AllMovies = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const AllMovies = () => {
         const responce = await fetch(`${APImovie}?${APIkey}&page=${currentPage}`, {headers: {'Authorization': `Bearer ${token}`}})
         const json = await responce.json()
         console.log(json.results)
-        dispatch({type: 'ON_MOVIES_LOADED', payload: json.results})
+        dispatch({type:ON_MOVIES_LOADED, payload: json.results})
     }
 
     useEffect(() => {
