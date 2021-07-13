@@ -74,6 +74,9 @@ const AllGenres = () => {
                     <Route path="/movies/:genre/:details" exact>
                         <MovieInfo/>
                     </Route>
+                    <Route path="/:details" exact>
+                        <MovieInfo/>
+                    </Route>
                 </Switch>
 
 

@@ -3,7 +3,9 @@
 }
 .background{
     /*width: 900px;*/
-    /*height: 1000px;*/
+    height: 1000px;
+    box-sizing: border-box;
+    width: 90%;
     filter:blur(6px);
     position: absolute;
 }
