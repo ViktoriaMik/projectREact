@@ -8,6 +8,7 @@
 
 .mainContent {
     display: flex;
+    list-style: none;
 }
 
 .pages {
@@ -23,4 +24,19 @@
     font-size: 20px;
     font-weight: lighter;
     cursor: pointer;
+}
+.button{
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius:15px;
+    list-style: none;
+
+}
+.button:hover{
+    margin: 10px;
+    border: 3px solid grey;
+
+}
+.menuWraper{
+    list-style: none;
 }

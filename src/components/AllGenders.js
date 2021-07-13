@@ -44,23 +44,23 @@ const AllGenres = () => {
 
     return (
         (<div className={styles.mainContent}>
-            <div>{genres.map(genre => (
+            <div >{genres.map(genre => (
                 <Link to={`/movies/${genre.name}`}>
-                    <button onClick={() => {
+                    <span onClick={() => {
                         setId(genre.id)
                         fetchMovieByGenre(genre.id)
 
-                        }} className={styles.button}>{genre.name}</button>
+                        }} className={styles.button}>{genre.name}</span>
                 </Link>
             ))}
-                <div>
-                    {pages.map(page => (
-                        <span
-                            onClick={() => dispatch(setPageMovieByGenre(page))}
-                            className={currentPage === page ? styles.pages : styles.page}>
-                        {page}</span>
-                    ))}
-                </div>
+                {/*<div>*/}
+                {/*    {pages.map(page => (*/}
+                {/*        <span*/}
+                {/*            onClick={() => dispatch(setPageMovieByGenre(page))}*/}
+                {/*            className={currentPage === page ? styles.pages : styles.page}>*/}
+                {/*        {page}</span>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
             </div>
             <Switch>
                 <Route path="/movies" exact>
