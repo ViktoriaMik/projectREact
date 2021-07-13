@@ -15,7 +15,7 @@ const AllGenres = () => {
 
     const currentPage = useSelector(({genresReducer: {currentPage}}) => currentPage)
     const genres = useSelector(({genresReducer: {genres}}) => genres)
-    console.log(currentPage);
+
     const pages = [1, 2, 3, 4]
 
     const dispatch = useDispatch();
@@ -36,11 +36,10 @@ const AllGenres = () => {
 
     useEffect(() => {
         fetchGenders()
-        fetchMovieByGenre(id)
+
     }, []);
     useEffect(() => {
-
-        fetchMovieByGenre(id)
+        fetchMovieByGenre()
     }, [id,currentPage]);
 
     return (
@@ -49,8 +48,9 @@ const AllGenres = () => {
                 <Link to={`/movies/${genre.name}`}>
                     <button onClick={() => {
                         setId(genre.id)
+                        fetchMovieByGenre(genre.id)
 
-                    }} className={styles.button}>{genre.name}</button>
+                        }} className={styles.button}>{genre.name}</button>
                 </Link>
             ))}
                 <div>

@@ -1,8 +1,6 @@
-import {createStore} from "redux";
 import {
     END_GENRES_LOADED,
-    ON_GENRES_LOADED,
-    SET_MOVIE_BY_GENRES_PAGE,
+    ON_GENRES_LOADED, SET_MOVIE_BY_GENRES_PAGE,
     START_GENRES_LOADED
 } from "../action-type/genres-action-type";
 import {SET_CURRENT_PAGE} from "../action-type/movies-action-type";

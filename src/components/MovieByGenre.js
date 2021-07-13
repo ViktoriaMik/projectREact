@@ -6,8 +6,9 @@ import {Link, Route, Switch,useRouteMatch,useParams} from "react-router-dom";
 const MovieByGenre = (props) => {
     const {url}=useRouteMatch()
 
+
     const moviesByGenre = useSelector(({moviesReducer: {moviesByGenre}}) => moviesByGenre)
-        // console.log(moviesByGenre)
+
     return (
         <div>
             {moviesByGenre.map(movie => (
