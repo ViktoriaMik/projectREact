@@ -1,0 +1,32 @@
+import {createStore} from "redux";
+import {ON_MOVIES_LOADED, ON_MOVIES_BY_GENRE_LOADED, SET_CURRENT_PAGE} from "../action-type/movies-action-type";
+
+const initialState = {
+    movies: [],
+    moviesByGenre: [],
+    movieInfo: {},
+    currentPage: 1,
+
+
+}
+
+export const MovieReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ON_MOVIES_LOADED: {
+            return {...state, movies: action.payload,}
+        }
+        case ON_MOVIES_BY_GENRE_LOADED: {
+            return {...state, moviesByGenre: action.payload}
+        }
+        case SET_MOVIE_INFO: {
+            return {...state, moviesByGenre: action.payload}
+        }
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.payload}
+        }
+
+
+        default:
+            return state
+    }
+}

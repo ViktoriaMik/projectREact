@@ -1,0 +1,26 @@
+.leftBar {
+
+}
+
+.button {
+    display: block;
+}
+
+.mainContent {
+    display: flex;
+}
+
+.pages {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.page {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    cursor: pointer;
+}
