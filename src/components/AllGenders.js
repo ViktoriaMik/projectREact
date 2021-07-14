@@ -4,7 +4,7 @@ import styles from './style.module.css'
 import AllMovies from "./AllMovies";
 import {Link, Route, Switch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {setGenres, setPageMovieByGenre} from "../redux/action-creator/genres-action-creator";
+import {setGenrePage, setGenres, setPageMovieByGenre} from "../redux/action-creator/genres-action-creator";
 import {setMoviesByGenre} from "../redux/action-creator/movies-action-creator";
 import MovieByGenre from "./MovieByGenre";
 import MovieInfo from "./MovieInfo";
@@ -14,8 +14,10 @@ const AllGenres = () => {
     const [id, setId] = useState()
 
     const currentPage = useSelector(({genresReducer: {currentPage}}) => currentPage)
+    // const currentPage = useSelector(({moviesReducer: {currentPage}}) => currentPage)
+    console.log(currentPage)
     const genres = useSelector(({genresReducer: {genres}}) => genres)
-
+console.log(id)
     const pages = [1, 2, 3, 4]
 
     const dispatch = useDispatch();
@@ -39,8 +41,8 @@ const AllGenres = () => {
 
     }, []);
     useEffect(() => {
-        fetchMovieByGenre()
-    }, [id, currentPage]);
+        fetchMovieByGenre(id)
+    }, [ id,currentPage]);
 
     return (
         <>
@@ -49,7 +51,7 @@ const AllGenres = () => {
                     <Link  to={`/movies/${genre.name}`}>
                         <div onClick={() => {
                             setId(genre.id)
-                            fetchMovieByGenre(genre.id)
+                            // fetchMovieByGenre(genre.id)
 
                         }} className={styles.button}>{genre.name}</div>
                     </Link>
@@ -62,11 +64,11 @@ const AllGenres = () => {
                             <AllMovies/>
                         </Route>
                         <Route path="/movies/:genre" exact>
-                            <MovieByGenre/>
+                            <div className={styles.rightMovie}><MovieByGenre/></div>
                             <div className={styles.bottom}>
                                 {pages.map(page => (
                                     <span
-                                        onClick={() => dispatch(setPageMovieByGenre(page))}
+                                        onClick={() => dispatch(setGenrePage(page))}
                                         className={currentPage === page ? styles.pages : styles.page}>
                             {page}</span>
                                 ))}

@@ -1,6 +1,6 @@
 import {
     END_GENRES_LOADED,
-    ON_GENRES_LOADED, SET_MOVIE_BY_GENRES_PAGE,
+    ON_GENRES_LOADED, SET_GENRES_PAGE, SET_MOVIE_BY_GENRES_PAGE,
     START_GENRES_LOADED
 } from "../action-type/genres-action-type";
 import {SET_CURRENT_PAGE} from "../action-type/movies-action-type";
@@ -24,6 +24,9 @@ export const GenresReducer = (state = initialState, action) => {
             return {...state, isLoading: false}
         }
         case SET_MOVIE_BY_GENRES_PAGE: {
+            return {...state, currentPage: action.payload}
+        }
+        case SET_GENRES_PAGE: {
             return {...state, currentPage: action.payload}
         }
 

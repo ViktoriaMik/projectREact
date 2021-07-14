@@ -27,12 +27,14 @@
     flex-wrap: nowrap;
     align-items: end;
     justify-content: center;
-    position: relative;
-    left:-700px;
-    top:870px
+    /*position: relative;*/
+    /*left:-700px;*/
+    /*top:870px*/
     /*position: relative;*/
 }
-
+.rightMovie{
+    display: block;
+}
 .mainContent {
     display: flex;
     list-style: none;
