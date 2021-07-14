@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import styles from"./styles.module.css"
 import {
     BrowserRouter as Router,
     Switch,
@@ -19,16 +20,11 @@ const Navigation = () => {
                 <div>
                     <nav>
                         <ul>
-                            <li>
-                                <Link to="/movies">Home</Link>
+                            <li  className={styles.icon} >
+                                <Link style={{color:"silver"}} to="/movies">MOVIEDB</Link>
                             </li>
-
-
-
                         </ul>
                     </nav>
-
-
                     <Route path="/">
                         <AllGenders/>
                     </Route>

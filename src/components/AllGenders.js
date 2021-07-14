@@ -44,46 +44,46 @@ const AllGenres = () => {
 
     return (
         <>
-        <div className={styles.mainContent}>
-            <div className={styles.leftBar}>{genres.map(genre => (
-                <Link to={`/movies/${genre.name}`}>
-                    <span onClick={() => {
-                        setId(genre.id)
-                        fetchMovieByGenre(genre.id)
+            <div className={styles.mainContent}>
+                <div className={styles.leftBar}>{genres.map(genre => (
+                    <Link  to={`/movies/${genre.name}`}>
+                        <div onClick={() => {
+                            setId(genre.id)
+                            fetchMovieByGenre(genre.id)
 
-                    }} className={styles.button}>{genre.name}</span>
-                </Link>
-            ))}</div>
+                        }} className={styles.button}>{genre.name}</div>
+                    </Link>
+                ))}</div>
 
-            <div className={styles.right}>
+                <div className={styles.right}>
 
-                <Switch>
-                    <Route path="/movies" exact>
-                        <AllMovies/>
-                    </Route>
-                    <Route path="/movies/:genre" exact>
-                        <MovieByGenre/>
-                        {/*<div className={styles.bottom}>*/}
-                        {/*    {pages.map(page => (*/}
-                        {/*        <span*/}
-                        {/*            onClick={() => dispatch(setPageMovieByGenre(page))}*/}
-                        {/*            className={currentPage === page ? styles.pages : styles.page}>*/}
-                        {/*{page}</span>*/}
-                        {/*    ))}*/}
-                        {/*</div>*/}
-                    </Route>
-                    <Route path="/movies/:genre/:details" exact>
-                        <MovieInfo/>
-                    </Route>
-                    <Route path="/:details" exact>
-                        <MovieInfo/>
-                    </Route>
-                </Switch>
+                    <Switch>
+                        <Route path="/movies" exact>
+                            <AllMovies/>
+                        </Route>
+                        <Route path="/movies/:genre" exact>
+                            <MovieByGenre/>
+                            <div className={styles.bottom}>
+                                {pages.map(page => (
+                                    <span
+                                        onClick={() => dispatch(setPageMovieByGenre(page))}
+                                        className={currentPage === page ? styles.pages : styles.page}>
+                            {page}</span>
+                                ))}
+                            </div>
+                        </Route>
+                        <Route path="/movies/:genre/:details" exact>
+                            <MovieInfo/>
+                        </Route>
+                        <Route path="/:details" exact>
+                            <MovieInfo/>
+                        </Route>
+                    </Switch>
 
 
+                </div>
             </div>
-        </div>
-    </>
+        </>
     );
 }
 

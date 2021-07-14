@@ -1,10 +1,12 @@
-.wraper{
+.wraper {
     border: 1px solid grey;
     margin-bottom: 10px;
-/*margin: 10px;*/
+    border-radius: 20px;
+    /*margin: 10px;*/
 
 }
-.paggination{
+
+.paggination {
     display: block;
     justify-content: center;
     margin-top: 15px;
@@ -12,23 +14,31 @@
     height: 40px;
     width: 200px;
 }
+
 .button {
     display: block;
+    color: white;
+    size: 17px;
+    list-style: none;
 }
-.bottom{
+
+.bottom {
     display: inline-block;
     flex-wrap: nowrap;
     align-items: end;
-
     justify-content: center;
+    position: relative;
+    left:-700px;
+    top:870px
     /*position: relative;*/
 }
+
 .mainContent {
     display: flex;
     list-style: none;
     box-sizing: border-box;
     /*align-items: center;*/
-    position: relative;
+    position: absolute;
 
 }
 
@@ -37,12 +47,13 @@
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-
-
 }
+
 
 .leftBar {
     display: block;
+    color: white;
+    list-style: none;
 }
 
 .right {
@@ -53,12 +64,22 @@
     width: 200px;
     height: 200px;
     display: block;
+    border-radius: 20px;
 }
-.title{
+.picture :hover{
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 20px;
+    border:3px solid grey;
+}
+
+.title {
     display: block;
     justify-content: center;
     width: 150px;
 }
+
 .container {
     height: 200px;
     width: 100%;
@@ -77,9 +98,13 @@
 
 .button {
     margin: 10px;
+    width: 120px;
     border: 1px solid grey;
-    border-radius: 15px;
+    border-radius: 20px;
     list-style: none;
+    align-items: center;
+font-size: 20px;
+    padding: 10px;
 
 }
 
