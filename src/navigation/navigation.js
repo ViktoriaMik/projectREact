@@ -11,6 +11,7 @@ import AllGenres from "../components/AllGenders";
 
 import AllGenders from "../components/AllGenders";
 import MovieByGenre from "../components/MovieByGenre";
+import SimpleSlider from "../components/sliderComponent";
 
 const Navigation = () => {
 
@@ -25,6 +26,7 @@ const Navigation = () => {
                             </li>
                         </ul>
                     </nav>
+                    <SimpleSlider/>
                     <Route path="/">
                         <AllGenders/>
                     </Route>

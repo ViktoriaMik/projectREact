@@ -5,7 +5,7 @@ import AllMovies from "./AllMovies";
 import {Link, Route, Switch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setGenrePage, setGenres, setPageMovieByGenre} from "../redux/action-creator/genres-action-creator";
-import {setMoviesByGenre} from "../redux/action-creator/movies-action-creator";
+import {setCurrentPage, setMoviesByGenre} from "../redux/action-creator/movies-action-creator";
 import MovieByGenre from "./MovieByGenre";
 import MovieInfo from "./MovieInfo";
 
@@ -13,8 +13,8 @@ const AllGenres = () => {
 
     const [id, setId] = useState()
 
-    const currentPage = useSelector(({genresReducer: {currentPage}}) => currentPage)
-    // const currentPage = useSelector(({moviesReducer: {currentPage}}) => currentPage)
+    // const currentPage = useSelector(({genresReducer: {currentPage}}) => currentPage)
+    const currentPage = useSelector(({moviesReducer: {currentPage}}) => currentPage)
     console.log(currentPage)
     const genres = useSelector(({genresReducer: {genres}}) => genres)
 console.log(id)
@@ -65,14 +65,6 @@ console.log(id)
                         </Route>
                         <Route path="/movies/:genre" exact>
                             <div className={styles.rightMovie}><MovieByGenre/></div>
-                            <div className={styles.bottom}>
-                                {pages.map(page => (
-                                    <span
-                                        onClick={() => dispatch(setGenrePage(page))}
-                                        className={currentPage === page ? styles.pages : styles.page}>
-                            {page}</span>
-                                ))}
-                            </div>
                         </Route>
                         <Route path="/movies/:genre/:details" exact>
                             <MovieInfo/>
@@ -84,6 +76,15 @@ console.log(id)
 
 
                 </div>
+
+            </div>
+            <div className={styles.bottom}>
+                {pages.map(page => (
+                    <span
+                        onClick={() => dispatch(setCurrentPage(page))}
+                        className={currentPage === page ? styles.pages : styles.page}>
+                            {page}</span>
+                ))}
             </div>
         </>
     );

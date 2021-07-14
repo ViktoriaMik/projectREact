@@ -73,14 +73,6 @@ const AllMovies = () => {
                         </Link>
                     </div>
                 ))}
-                <div className={styles.paggination}>
-                    {pages.map(page => (
-                        <span
-                            onClick={() => dispatch(setCurrentPage(page))}
-                            className={currentPage === page ? styles.pages : styles.page}>
-                        {page}</span>
-                    ))}
-                </div>
 
             </div>
         )

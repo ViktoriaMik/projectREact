@@ -1,5 +1,7 @@
-body{
+body {
     background: #050d21;
-
-    color:silver
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+    color: silver
 }
