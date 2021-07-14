@@ -11,7 +11,7 @@ import MovieInfo from "./MovieInfo";
 
 const AllGenres = () => {
 
-    const [id,setId]=useState()
+    const [id, setId] = useState()
 
     const currentPage = useSelector(({genresReducer: {currentPage}}) => currentPage)
     const genres = useSelector(({genresReducer: {genres}}) => genres)
@@ -40,28 +40,21 @@ const AllGenres = () => {
     }, []);
     useEffect(() => {
         fetchMovieByGenre()
-    }, [id,currentPage]);
+    }, [id, currentPage]);
 
     return (
-        (<div className={styles.mainContent}>
+        <>
+        <div className={styles.mainContent}>
             <div className={styles.leftBar}>{genres.map(genre => (
                 <Link to={`/movies/${genre.name}`}>
                     <span onClick={() => {
                         setId(genre.id)
                         fetchMovieByGenre(genre.id)
 
-                        }} className={styles.button}>{genre.name}</span>
+                    }} className={styles.button}>{genre.name}</span>
                 </Link>
-            ))}
-                {/*<div>*/}
-                {/*    {pages.map(page => (*/}
-                {/*        <span*/}
-                {/*            onClick={() => dispatch(setPageMovieByGenre(page))}*/}
-                {/*            className={currentPage === page ? styles.pages : styles.page}>*/}
-                {/*        {page}</span>*/}
-                {/*    ))}*/}
-                {/*</div>*/}
-            </div>
+            ))}</div>
+
             <div className={styles.right}>
 
                 <Switch>
@@ -70,6 +63,14 @@ const AllGenres = () => {
                     </Route>
                     <Route path="/movies/:genre" exact>
                         <MovieByGenre/>
+                        {/*<div className={styles.bottom}>*/}
+                        {/*    {pages.map(page => (*/}
+                        {/*        <span*/}
+                        {/*            onClick={() => dispatch(setPageMovieByGenre(page))}*/}
+                        {/*            className={currentPage === page ? styles.pages : styles.page}>*/}
+                        {/*{page}</span>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
                     </Route>
                     <Route path="/movies/:genre/:details" exact>
                         <MovieInfo/>
@@ -81,7 +82,8 @@ const AllGenres = () => {
 
 
             </div>
-        </div>)
+        </div>
+    </>
     );
 }
 

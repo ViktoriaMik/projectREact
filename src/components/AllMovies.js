@@ -1,8 +1,6 @@
 import {APIbyId, APIimg, APIkey, APImovie, token} from "../constants/constants";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import moviesReducer from "../redux/reducers/movies-reducer";
-import {store} from "../store/store";
 import {Link, useRouteMatch} from "react-router-dom";
 import styles from './style.module.css'
 import {setCurrentPage} from "../redux/action-creator/movies-action-creator";
@@ -59,7 +57,7 @@ const AllMovies = () => {
                         </Link>
                     </div>
                 ))}
-            <div>
+            <div className={styles.paggination}>
                 {pages.map(page => (
                     <span
                         onClick={() => dispatch(setCurrentPage(page))}

@@ -1,24 +1,39 @@
 .wraper{
     border: 1px solid grey;
     margin-bottom: 10px;
-margin: 10px;
+/*margin: 10px;*/
 
 }
-
+.paggination{
+    display: block;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: nowrap;
+    height: 40px;
+    width: 200px;
+}
 .button {
     display: block;
 }
+.bottom{
+    display: inline-block;
+    flex-wrap: nowrap;
+    align-items: end;
 
+    justify-content: center;
+    /*position: relative;*/
+}
 .mainContent {
     display: flex;
     list-style: none;
     box-sizing: border-box;
     /*align-items: center;*/
+    position: relative;
 
 }
 
 .pages {
-    margin-left: 5px;
+    margin-left: 20px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -54,7 +69,7 @@ margin: 10px;
 }
 
 .page {
-    /*margin-left: 20px;*/
+    margin-left: 20px;
     font-size: 20px;
     font-weight: lighter;
     cursor: pointer;
