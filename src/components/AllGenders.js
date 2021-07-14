@@ -60,6 +60,9 @@ console.log(id)
                 <div className={styles.right}>
 
                     <Switch>
+                        <Route path="/" exact>
+                            <AllMovies/>
+                        </Route>
                         <Route path="/movies" exact>
                             <AllMovies/>
                         </Route>
